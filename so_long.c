@@ -70,6 +70,11 @@ int	main(int argc, char **argv)
 		par.lines = map_lines(argv[1]);
 		par.columns = map_columns(argv[1]);
 		par.map = map_parser(argv[1], par);
+		if (!par.map)
+		{
+			printf("Error");
+			return (0);
+		}
 		if (check_map(&par) == 1)
 		{
 			printf("Error\nInvalid Map");
